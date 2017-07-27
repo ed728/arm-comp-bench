@@ -32,7 +32,7 @@ All tests were run on a HiKey960 board. It has a Cortex-A73 and Cortex-A53 in a 
 The driver version was Bifrost r6p0-01rel0 (UK version 10.6).
 The OpenCL library version was 1.2.
 The OS was Debian 9.
-The caffeOnACL build was straightforwardly adapted from the user guide, however one failure was ovserved when running the unit tests - it looks like the TanH layer was not built properly, so we cannot use it during benchmarking. The BLAS backend was set to OpenBLAS, which will be the fallback when we are not using ACL layers. The changes to the configuration that have been done were:\cite{coacl}
+The caffeOnACL build was straightforwardly adapted from the user guide, however one failure was observed when running the unit tests - it looks like the TanH layer was not built properly, so we cannot use it during benchmarking. The BLAS backend was set to OpenBLAS, which will be the fallback when we are not using ACL layers. The changes to the configuration that have been done were:
 \begin{lstlisting}[language=make]
 CPU_ONLY := 0
 USE_PROFILING := 1
@@ -40,7 +40,7 @@ USE_PROFILING := 1
 
 For choosing whether we use ACL layers or not, we use the \verb|BYPASSACL| environment variable.
 
-We control whether the GPU is used by the \verb|-gpu all| flag.
+We control whether the GPU is used by the \verb|-gpu all| flag.\cite{coacl}
 
 \subsection*{Tests}
 The tests consist of running the BVLC reference ImageNet model, referred to as CaffeNet. We download the reference trained model and run its testing phase as defined in the Caffe documentations, which should run validation on the ILSVRC2012 data set. In each case we run 100 iterations and then average over them.\cite{caffe}
@@ -89,7 +89,7 @@ These names are taken from Caffe's documentation, and further details can be fou
 \end{itemize}
 
 \subsubsection*{Values}
-The value are in second and have been rounded to 7 decimal places.
+The value are in seconds and have been rounded to 7 decimal places.
 \begin{center}
 \begin{tabular}{ | c | c | c | c |}
 \hline
