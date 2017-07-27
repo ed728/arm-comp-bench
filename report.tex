@@ -1,0 +1,101 @@
+\documentclass[12pt, a4paper, notitlepage]{report}
+\usepackage{titling}
+\usepackage{listings}
+
+\title{Caffe on ARM \\ v1.0}
+\author{Ed Jaras \\edvin.jaras@gmail.com}
+\date{26/07/2017}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+\textit{A comparison of the performance gains provided by the ARM Compute Library via ASIMD and Mali GPU acceleration.}
+\end{abstract}
+\section*{Introduction}
+\subsection*{ACL}
+In March 2017 ARM released their Compute Library publicly, which is meant to replace the old ARM CV interface, and allow abstracted access to features like ASIMD or NEON, and GPGPU on Mali via OpenCL.
+
+In terms of CPU optimizations, it offers implementations of many basic algebraic functions, and matrix multiplications in a SIMD manner. For example it supports executing the common BLAS functions of HGEMM and SGEMM on NEON or ASIMD.
+
+\subsection*{caffeOnACL}
+OpenAI Labs have worked on an implementation of Caffe on top of the ARM Compute Library, which replaces some of the Caffe layers with ACL versions. It is worth noting that not all mathematical operations are supported to be run via ACL, and some end up falling back on the BLAS implementations. The framework also provides the means to bypass some ACL layers and fallback onto the regular Caffe implementations if desired, and the user guide example even shows how the best performance can be achieved via mixing ACL and base Caffe layers.
+
+This implementation does not include backwards propagation on ACL - all of the layers just raise a "Not Implemented" exception if you try. I expect the workflow is meant to be to train on a desktop-grade GPU, or possibly a cluster, and then run classification on Mali on the go.
+
+\section*{Set-up}
+\subsection*{Hardware}
+All tests were run on a HiKey960 board. It has a Cortex-A73 and Cortex-A53 in a big.LITTLE configuration, along with a Mali-G71 MP8 GPU and 3GB of RAM. The SoC is similar to the Exynos 9 used by the Samsung Galaxy S8, except with a slightly different big core, and a MP8 instead of a MP20 GPU, which is why I believe it is a good reference of what high-end phones can achieve right now.
+
+\subsection*{Software}
+The driver version was Bifrost r6p0-01rel0 (UK version 10.6).
+The OpenCL library version was 1.2.
+The OS was Debian 9.
+The caffeOnACL build was straightforwardly adapted from the user guide, however one failure was ovserved when running the unit tests - it looks like the TanH layer was not built properly, so we cannot use it during benchmarking. The BLAS backend was set to OpenBLAS, which will be the fallback when we are not using ACL layers. The changes to the configuration that have been done were:
+\begin{lstlisting}[language=make]
+CPU_ONLY := 0
+USE_PROFILING := 1
+\end{lstlisting}
+
+For choosing whether we use ACL layers or not, we use the \verb|BYPASSACL| environment variable.
+
+We control whether the GPU is used by the \verb|-gpu all| flag.
+
+\subsection*{Tests}
+The tests consist of running the BVLC reference ImageNet model, referred to as CaffeNet. We download the reference trained model and run its testing phase as defined in the Caffe documentations, which should run validation on the ILSVC2012 data set. In each case we run 100 iterations and then average over them.
+We start in the root directory of caffeOnACL.
+\begin{lstlisting}[language=bash]
+CAFFE=build/tools/caffe
+REF=models/bvls_reference_caffenet
+MODEL=$REF/deploy.prototxt
+WEIGHTS=$REF/bvlc_reference_caffenet.caffemodel
+ITERS=100
+\end{lstlisting}
+\subsubsection*{CPU Caffe}
+This uses the default Caffe CPU backend, which in our case should rely on OpenBLAS for optimizations.
+\begin{lstlisting}[language=bash]
+export BYPASSACL=0xffffffff
+$CAFFE test -model $MODEL -weights $WEIGHTS -iterations $ITERS
+\end{lstlisting}
+
+\subsubsection*{CPU ACL}
+This uses the ACL backend for CPU computation, which optimizes via ASIMD for ARMv8.
+\begin{lstlisting}[language=bash]
+export BYPASSACL=0x0
+$CAFFE test -model $MODEL -weights $WEIGHTS -iterations $ITERS
+\end{lstlisting}
+
+\subsubsection*{GPU ACL}
+This relies on the ACL library to communicate with OpenCL to run on Mali.
+\begin{lstlisting}[language=bash]
+export BYPASSACL=0x0
+$CAFFE test -model $MODEL -weights $WEIGHTS -gpu all -iterations $ITERS
+\end{lstlisting}
+
+\section*{Results}
+The results are as follows.
+\begin{center}
+\begin{tabular}{ | c | c | c | c |}
+\hline
+Layer & CPU Caffe & CPU ACL & GPU ACL \\
+\hline
+POOLING & 0.0434257926421 & 0.163508819398 & 0.160824250836 \\
+\hline
+FC & 0.118852133779 & 0.0612271705686 & 0.060975909699 \\
+\hline
+RELU & 0.00818867811159 & 0.00384102432046 & 0.00384087124464 \\
+\hline
+LRN & 0.106686984925 & 0.0186759396985 & 0.0182974874372 \\
+\hline
+CONV & 0.883204086172 & 0.780235136273 & 0.614299458918 \\
+\hline
+SOFTMAX & 0.000983898989899 & 0.000196696969697 & 0.000180818181818 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{Discussion}
+For all layers, it looks like there is a small advantage in using the GPU over the CPU ACL which runs ASIMD, however for some layers the benefit looks very minute. I expect the main issue with running on the GPU is that even though it accelerates the computation greatly due to its parallelisation, however there is an overhead present due to the memory mapping.
+The native Caffe CPU implementation seems to pull ahead in the pooling layer. When ACL is not used Caffe falls back on OpenBLAS usually, so either OpenBLAS or Caffe's usage of it seems to still be more optimized than ARM's. It is surprising, since from my investigations it looks like OpenBLAS does not use ASIMD for ARMv8, which we are using, so it would be interesting to compare this to a ARMv7 benchmark.
+\end{document}
