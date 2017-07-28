@@ -2,7 +2,7 @@
 \usepackage{titling}
 \usepackage{listings}
 
-\title{Caffe on ARM \\ v1.1}
+\title{Caffe on ARM \\ v1.2}
 \author{Ed Jaras \\edvin.jaras@gmail.com}
 \date{26/07/2017}
 
@@ -29,9 +29,11 @@ This implementation does not include backwards propagation on ACL - all of the l
 All tests were run on a HiKey960 board. It has a Cortex-A73 and Cortex-A53 in a big.LITTLE configuration, along with a Mali-G71 MP8 GPU and 3GB of RAM. The SoC is similar to the Exynos 9 used by the Samsung Galaxy S8, except with a slightly different big core, and a MP8 instead of a MP20 GPU, which is why I believe it is a good reference of what high-end phones can achieve right now.\cite{galaxy}
 
 \subsection*{Software}
-The driver version was Bifrost r6p0-01rel0 (UK version 10.6).
-The OpenCL library version was 1.2.
-The OS was Debian 9.
+The driver version was Bifrost r6p0-01rel0 (UK version 10.6).\\
+The OpenCL library version was 1.2.\\
+The OS was Debian 9.\\
+The ACL checkout was \texttt{db0e610fa90a4c7c534049792ee7fe143d46f72f}.\\
+The caffeOnAcl checkout was \texttt{a9d213eb6936d92a493a45a0f9640da723996b03}.\\
 The caffeOnACL build was straightforwardly adapted from the user guide, however one failure was observed when running the unit tests - it looks like the TanH layer was not built properly, so we cannot use it during benchmarking. The BLAS backend was set to OpenBLAS, which will be the fallback when we are not using ACL layers. The changes to the configuration that have been done were:
 \begin{lstlisting}[language=make]
 CPU_ONLY := 0
@@ -43,14 +45,14 @@ For choosing whether we use ACL layers or not, we use the \verb|BYPASSACL| envir
 We control whether the GPU is used by the \verb|-gpu all| flag.\cite{coacl}
 
 \subsection*{Tests}
-The tests consist of running the BVLC reference ImageNet model, referred to as CaffeNet. We download the reference trained model and run its testing phase as defined in the Caffe documentations, which should run validation on the ILSVRC2012 data set. In each case we run 100 iterations and then average over them.\cite{caffe}
+The tests consist of running the BVLC reference ImageNet model, referred to as CaffeNet. We download the reference trained model and run its testing phase as defined in the Caffe documentations, which should run validation on the ILSVRC2012 data set. In each case we run 1000 iterations and then average over them.\cite{caffe}
 We start in the root directory of caffeOnACL.
 \begin{lstlisting}[language=bash]
 CAFFE=build/tools/caffe
 REF=models/bvls_reference_caffenet
 MODEL=$REF/deploy.prototxt
 WEIGHTS=$REF/bvlc_reference_caffenet.caffemodel
-ITERS=100
+ITERS=1000
 \end{lstlisting}
 \subsubsection*{CPU Caffe}
 This uses the default Caffe CPU backend, which in our case should rely on OpenBLAS for optimizations.
@@ -95,23 +97,23 @@ The value are in seconds and have been rounded to 7 decimal places.
 \hline
 Layer & CPU Caffe & CPU ACL & GPU ACL \\
 \hline
-POOLING & 0.0434258 & 0.1635088 & 0.1608243 \\
+POOLING & 0.0438035 & 0.1741971 & 0.1683502 \\
 \hline
-FC & 0.1188521 & 0.0612272 & 0.0609759 \\
+FC & 0.1208655 & 0.0604789 & 0.0597605 \\
 \hline
-RELU & 0.0081887 & 0.0038410 & 0.0038409 \\
+RELU & 0.0084044 & 0.0040321 & 0.0038901 \\
 \hline
-LRN & 0.1066870 & 0.0186759 & 0.0182975 \\
+LRN & 0.1069563 & 0.01983366 & 0.0196404 \\
 \hline
-CONV & 0.8832041 & 0.7802351 & 0.6142995 \\
+CONV & 0.7755730 & 0.7150786 & 0.7573765 \\
 \hline
-SOFTMAX & 0.0009839 & 0.0001967 & 0.0001808 \\
+SOFTMAX & 0.0009729 & 0.0002014 & 0.0002009 \\
 \hline
 \end{tabular}
 \end{center}
 
 \section*{Discussion}
-For all layers, it looks like there is a small advantage in using the GPU over the CPU ACL which runs ASIMD, however for some layers the benefit looks very minute. I expect the main issue with running on the GPU is that even though it accelerates the computation greatly due to its parallelisation, however there is an overhead present due to the memory mapping.\\
+For all layers except convolution, it looks like there is a small advantage in using the GPU over the CPU ACL which runs ASIMD, however for some layers the benefit looks very minute. I expect the main issue with running on the GPU is that even though it accelerates the computation greatly due to its parallelisation, however there is an overhead present due to the memory mapping. Another possible issue, especially for convolution, could be the size of the kernel, since the GPU is best suited for running a lot of small kernels in parallel, however a large convolution kernel where there could be a high amount of memory accesses can slow things down. Note that this is just conjecture for now, and more investigation is needed.\\
 The native Caffe CPU implementation seems to pull ahead in the pooling layer quite significantly. When ACL is not used Caffe falls back on OpenBLAS usually, so either OpenBLAS or Caffe's usage of it seems to still be more optimized than ARM's when it comes to pooling. It is surprising, since from my investigations it looks like OpenBLAS does not use ASIMD for ARMv8, which we are using, so it would be interesting to compare this to a ARMv7 benchmark.
 
 \medskip
