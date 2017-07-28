@@ -10,7 +10,7 @@ Deep Learning benchmarking results and comparisons on ARM CPUs and GPUs.
 * References.
 
 ## Instructions
-Just build with `pdflatex repoer.tex`.
+Just build with `pdflatex report.tex`.
 
 ## TO-DO
 - [X] Use values per 1000 iterations.
