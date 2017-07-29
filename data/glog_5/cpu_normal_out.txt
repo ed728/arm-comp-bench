@@ -1,0 +1,662 @@
+BYPASSACL<0xffffffff>
+BYPASSACL: ffffffff
+ACL_CONV   :								 0.487172
+ACL_RELU   :												 0.038557
+ACL_POOLING:											 0.109805
+ACL_LRN    :										 0.310734
+ACL_CONV   :								 0.644454
+ACL_RELU   :												 0.010324
+ACL_CONV   :								 1.749140
+ACL_RELU   :												 0.027970
+ACL_LRN    :										 0.611346
+ACL_POOLING:											 0.060519
+ACL_CONV   :								 0.584042
+ACL_RELU   :												 0.001951
+ACL_CONV   :								 0.638004
+ACL_RELU   :												 0.003715
+ACL_CONV   :								 1.528218
+ACL_RELU   :												 0.003922
+ACL_CONV   :								 0.143427
+ACL_RELU   :												 0.000507
+ACL_CONV   :								 0.053877
+ACL_RELU   :												 0.000977
+ACL_POOLING:											 0.093097
+ACL_CONV   :								 0.022719
+ACL_RELU   :												 0.001114
+ACL_CONV   :								 0.053545
+ACL_RELU   :												 0.003919
+ACL_CONV   :								 0.055479
+ACL_RELU   :												 0.005515
+ACL_CONV   :								 0.369581
+ACL_RELU   :												 0.007053
+ACL_CONV   :								 0.029290
+ACL_RELU   :												 0.000855
+ACL_CONV   :								 0.207361
+ACL_RELU   :												 0.002949
+ACL_POOLING:											 0.125933
+ACL_CONV   :								 0.028205
+ACL_RELU   :												 0.001882
+ACL_POOLING:											 0.057108
+ACL_CONV   :								 0.045187
+ACL_RELU   :												 0.002656
+ACL_CONV   :								 0.028064
+ACL_RELU   :												 0.000734
+ACL_CONV   :								 0.098070
+ACL_RELU   :												 0.002012
+ACL_CONV   :								 0.010367
+ACL_RELU   :												 0.000144
+ACL_CONV   :								 0.021556
+ACL_RELU   :												 0.000375
+ACL_POOLING:											 0.047974
+ACL_CONV   :								 0.015776
+ACL_RELU   :												 0.000977
+ACL_CONV   :								 0.046008
+ACL_RELU   :												 0.001564
+ACL_CONV   :								 0.039177
+ACL_RELU   :												 0.000855
+ACL_CONV   :								 0.120092
+ACL_RELU   :												 0.001707
+ACL_CONV   :								 0.013393
+ACL_RELU   :												 0.000214
+ACL_CONV   :								 0.022401
+ACL_RELU   :												 0.000488
+ACL_POOLING:											 0.076656
+ACL_CONV   :								 0.016552
+ACL_RELU   :												 0.000420
+ACL_CONV   :								 0.030950
+ACL_RELU   :												 0.001335
+ACL_CONV   :								 0.031356
+ACL_RELU   :												 0.000976
+ACL_CONV   :								 0.139488
+ACL_RELU   :												 0.001949
+ACL_CONV   :								 0.013403
+ACL_RELU   :												 0.000185
+ACL_CONV   :								 0.022468
+ACL_RELU   :												 0.000488
+ACL_POOLING:											 0.091591
+ACL_CONV   :								 0.016416
+ACL_RELU   :												 0.000508
+ACL_CONV   :								 0.039392
+ACL_RELU   :												 0.001085
+ACL_CONV   :								 0.040063
+ACL_RELU   :												 0.001259
+ACL_CONV   :								 0.192045
+ACL_RELU   :												 0.003790
+ACL_CONV   :								 0.016320
+ACL_RELU   :												 0.000315
+ACL_CONV   :								 0.031179
+ACL_RELU   :												 0.000532
+ACL_POOLING:											 0.063874
+ACL_CONV   :								 0.016781
+ACL_RELU   :												 0.000622
+ACL_CONV   :								 0.064621
+ACL_RELU   :												 0.001966
+ACL_CONV   :								 0.045801
+ACL_RELU   :												 0.001977
+ACL_CONV   :								 0.214333
+ACL_RELU   :												 0.002436
+ACL_CONV   :								 0.016060
+ACL_RELU   :												 0.000254
+ACL_CONV   :								 0.055624
+ACL_RELU   :												 0.001239
+ACL_POOLING:											 0.063703
+ACL_CONV   :								 0.033005
+ACL_RELU   :												 0.001952
+ACL_POOLING:											 0.039674
+ACL_CONV   :								 0.039716
+ACL_RELU   :												 0.000489
+ACL_CONV   :								 0.025688
+ACL_RELU   :												 0.000308
+ACL_CONV   :								 0.088154
+ACL_RELU   :												 0.000779
+ACL_CONV   :								 0.006983
+ACL_RELU   :												 0.000079
+ACL_CONV   :								 0.021366
+ACL_RELU   :												 0.000266
+ACL_POOLING:											 0.029494
+ACL_CONV   :								 0.020382
+ACL_RELU   :												 0.000247
+ACL_CONV   :								 0.059548
+ACL_RELU   :												 0.001485
+ACL_CONV   :								 0.030176
+ACL_RELU   :												 0.000467
+ACL_CONV   :								 0.125526
+ACL_RELU   :												 0.001465
+ACL_CONV   :								 0.010909
+ACL_RELU   :												 0.000121
+ACL_CONV   :								 0.031782
+ACL_RELU   :												 0.000311
+ACL_POOLING:											 0.030529
+ACL_CONV   :								 0.020394
+ACL_RELU   :												 0.000247
+ACL_POOLING:											 0.007390
+ACL_FC     :									 0.005584
+ACL_SOFTMAX:														 0.001437
+ACL_CONV   :								 1.120503
+ACL_RELU   :												 0.033648
+ACL_POOLING:											 0.119855
+ACL_LRN    :										 0.338111
+ACL_CONV   :								 0.516648
+ACL_RELU   :												 0.009606
+ACL_CONV   :								 1.637892
+ACL_RELU   :												 0.031127
+ACL_LRN    :										 0.535720
+ACL_POOLING:											 0.058169
+ACL_CONV   :								 0.470909
+ACL_RELU   :												 0.002028
+ACL_CONV   :								 0.545916
+ACL_RELU   :												 0.002550
+ACL_CONV   :								 1.509531
+ACL_RELU   :												 0.007838
+ACL_CONV   :								 0.539795
+ACL_RELU   :												 0.000507
+ACL_CONV   :								 0.783455
+ACL_RELU   :												 0.000838
+ACL_POOLING:											 0.163366
+ACL_CONV   :								 0.471685
+ACL_RELU   :												 0.000837
+ACL_CONV   :								 0.740888
+ACL_RELU   :												 0.003918
+ACL_CONV   :								 0.828046
+ACL_RELU   :												 0.003339
+ACL_CONV   :								 1.556216
+ACL_RELU   :												 0.008476
+ACL_CONV   :								 0.028721
+ACL_RELU   :												 0.001064
+ACL_CONV   :								 0.178818
+ACL_RELU   :												 0.002965
+ACL_POOLING:											 0.117637
+ACL_CONV   :								 0.025913
+ACL_RELU   :												 0.003919
+ACL_POOLING:											 0.064141
+ACL_CONV   :								 0.041230
+ACL_RELU   :												 0.002944
+ACL_CONV   :								 0.027680
+ACL_RELU   :												 0.000931
+ACL_CONV   :								 0.093139
+ACL_RELU   :												 0.002032
+ACL_CONV   :								 0.010220
+ACL_RELU   :												 0.000157
+ACL_CONV   :								 0.021086
+ACL_RELU   :												 0.000405
+ACL_POOLING:											 0.059003
+ACL_CONV   :								 0.015861
+ACL_RELU   :												 0.000624
+ACL_CONV   :								 0.043183
+ACL_RELU   :												 0.001220
+ACL_CONV   :								 0.037961
+ACL_RELU   :												 0.001085
+ACL_CONV   :								 0.119071
+ACL_RELU   :												 0.001706
+ACL_CONV   :								 0.012969
+ACL_RELU   :												 0.000185
+ACL_CONV   :								 0.021392
+ACL_RELU   :												 0.000488
+ACL_POOLING:											 0.072144
+ACL_CONV   :								 0.015869
+ACL_RELU   :												 0.000621
+ACL_CONV   :								 0.029759
+ACL_RELU   :												 0.000975
+ACL_CONV   :								 0.029801
+ACL_RELU   :												 0.002263
+ACL_CONV   :								 0.138335
+ACL_RELU   :												 0.002501
+ACL_CONV   :								 0.013004
+ACL_RELU   :												 0.000249
+ACL_CONV   :								 0.022384
+ACL_RELU   :												 0.000620
+ACL_POOLING:											 0.065914
+ACL_CONV   :								 0.016389
+ACL_RELU   :												 0.000840
+ACL_CONV   :								 0.038551
+ACL_RELU   :												 0.001080
+ACL_CONV   :								 0.038608
+ACL_RELU   :												 0.001097
+ACL_CONV   :								 0.187631
+ACL_RELU   :												 0.002206
+ACL_CONV   :								 0.015174
+ACL_RELU   :												 0.000249
+ACL_CONV   :								 0.030327
+ACL_RELU   :												 0.000993
+ACL_POOLING:											 0.086475
+ACL_CONV   :								 0.015839
+ACL_RELU   :												 0.000490
+ACL_CONV   :								 0.060021
+ACL_RELU   :												 0.003408
+ACL_CONV   :								 0.044972
+ACL_RELU   :												 0.001549
+ACL_CONV   :								 0.211122
+ACL_RELU   :												 0.003111
+ACL_CONV   :								 0.015685
+ACL_RELU   :												 0.000246
+ACL_CONV   :								 0.049974
+ACL_RELU   :												 0.001252
+ACL_POOLING:											 0.080540
+ACL_CONV   :								 0.030656
+ACL_RELU   :												 0.000993
+ACL_POOLING:											 0.026507
+ACL_CONV   :								 0.039385
+ACL_RELU   :												 0.000838
+ACL_CONV   :								 0.026017
+ACL_RELU   :												 0.000391
+ACL_CONV   :								 0.086194
+ACL_RELU   :												 0.000611
+ACL_CONV   :								 0.006716
+ACL_RELU   :												 0.000080
+ACL_CONV   :								 0.022049
+ACL_RELU   :												 0.000500
+ACL_POOLING:											 0.036420
+ACL_CONV   :								 0.020150
+ACL_RELU   :												 0.000245
+ACL_CONV   :								 0.058376
+ACL_RELU   :												 0.000942
+ACL_CONV   :								 0.029575
+ACL_RELU   :												 0.000367
+ACL_CONV   :								 0.124022
+ACL_RELU   :												 0.000733
+ACL_CONV   :								 0.010411
+ACL_RELU   :												 0.000093
+ACL_CONV   :								 0.030880
+ACL_RELU   :												 0.000310
+ACL_POOLING:											 0.044539
+ACL_CONV   :								 0.020147
+ACL_RELU   :												 0.000246
+ACL_POOLING:											 0.006003
+ACL_FC     :									 0.004771
+ACL_SOFTMAX:														 0.000981
+ACL_CONV   :								 0.443401
+ACL_RELU   :												 0.036205
+ACL_POOLING:											 0.119202
+ACL_LRN    :										 0.319999
+ACL_CONV   :								 0.384029
+ACL_RELU   :												 0.011771
+ACL_CONV   :								 0.702160
+ACL_RELU   :												 0.031711
+ACL_LRN    :										 0.564031
+ACL_POOLING:											 0.061372
+ACL_CONV   :								 0.489659
+ACL_RELU   :												 0.001720
+ACL_CONV   :								 0.482214
+ACL_RELU   :												 0.002923
+ACL_CONV   :								 1.138492
+ACL_RELU   :												 0.005016
+ACL_CONV   :								 0.015235
+ACL_RELU   :												 0.000490
+ACL_CONV   :								 0.055115
+ACL_RELU   :												 0.001950
+ACL_POOLING:											 0.083291
+ACL_CONV   :								 0.021199
+ACL_RELU   :												 0.000976
+ACL_CONV   :								 0.049666
+ACL_RELU   :												 0.006061
+ACL_CONV   :								 0.050855
+ACL_RELU   :												 0.006481
+ACL_CONV   :								 0.356082
+ACL_RELU   :												 0.008154
+ACL_CONV   :								 0.029526
+ACL_RELU   :												 0.001240
+ACL_CONV   :								 0.184375
+ACL_RELU   :												 0.002922
+ACL_POOLING:											 0.113890
+ACL_CONV   :								 0.025676
+ACL_RELU   :												 0.001977
+ACL_POOLING:											 0.060523
+ACL_CONV   :								 0.041884
+ACL_RELU   :												 0.001478
+ACL_CONV   :								 0.027433
+ACL_RELU   :												 0.000732
+ACL_CONV   :								 0.094482
+ACL_RELU   :												 0.001604
+ACL_CONV   :								 0.010528
+ACL_RELU   :												 0.000108
+ACL_CONV   :								 0.020609
+ACL_RELU   :												 0.000322
+ACL_POOLING:											 0.062288
+ACL_CONV   :								 0.016045
+ACL_RELU   :												 0.000577
+ACL_CONV   :								 0.043120
+ACL_RELU   :												 0.001047
+ACL_CONV   :								 0.038118
+ACL_RELU   :												 0.001084
+ACL_CONV   :								 0.118282
+ACL_RELU   :												 0.001722
+ACL_CONV   :								 0.013359
+ACL_RELU   :												 0.000158
+ACL_CONV   :								 0.021477
+ACL_RELU   :												 0.000620
+ACL_POOLING:											 0.072277
+ACL_CONV   :								 0.016046
+ACL_RELU   :												 0.000489
+ACL_CONV   :								 0.030251
+ACL_RELU   :												 0.001238
+ACL_CONV   :								 0.030172
+ACL_RELU   :												 0.001671
+ACL_CONV   :								 0.137711
+ACL_RELU   :												 0.002475
+ACL_CONV   :								 0.013449
+ACL_RELU   :												 0.000185
+ACL_CONV   :								 0.021151
+ACL_RELU   :												 0.000488
+ACL_POOLING:											 0.088099
+ACL_CONV   :								 0.016103
+ACL_RELU   :												 0.000490
+ACL_CONV   :								 0.038120
+ACL_RELU   :												 0.000855
+ACL_CONV   :								 0.039016
+ACL_RELU   :												 0.002215
+ACL_CONV   :								 0.188294
+ACL_RELU   :												 0.002809
+ACL_CONV   :								 0.015512
+ACL_RELU   :												 0.000245
+ACL_CONV   :								 0.028156
+ACL_RELU   :												 0.000519
+ACL_POOLING:											 0.080128
+ACL_CONV   :								 0.016148
+ACL_RELU   :												 0.000621
+ACL_CONV   :								 0.059976
+ACL_RELU   :												 0.003777
+ACL_CONV   :								 0.045448
+ACL_RELU   :												 0.001562
+ACL_CONV   :								 0.213907
+ACL_RELU   :												 0.003118
+ACL_CONV   :								 0.015984
+ACL_RELU   :												 0.000246
+ACL_CONV   :								 0.049724
+ACL_RELU   :												 0.001949
+ACL_POOLING:											 0.079116
+ACL_CONV   :								 0.030726
+ACL_RELU   :												 0.000977
+ACL_POOLING:											 0.028369
+ACL_CONV   :								 0.039964
+ACL_RELU   :												 0.000644
+ACL_CONV   :								 0.025345
+ACL_RELU   :												 0.000263
+ACL_CONV   :								 0.085577
+ACL_RELU   :												 0.001244
+ACL_CONV   :								 0.006861
+ACL_RELU   :												 0.000135
+ACL_CONV   :								 0.021355
+ACL_RELU   :												 0.000266
+ACL_POOLING:											 0.028551
+ACL_CONV   :								 0.019966
+ACL_RELU   :												 0.000245
+ACL_CONV   :								 0.059548
+ACL_RELU   :												 0.000932
+ACL_CONV   :								 0.029520
+ACL_RELU   :												 0.000369
+ACL_CONV   :								 0.123790
+ACL_RELU   :												 0.000733
+ACL_CONV   :								 0.010353
+ACL_RELU   :												 0.000081
+ACL_CONV   :								 0.030299
+ACL_RELU   :												 0.000310
+ACL_POOLING:											 0.031434
+ACL_CONV   :								 0.020048
+ACL_RELU   :												 0.000420
+ACL_POOLING:											 0.011979
+ACL_FC     :									 0.007583
+ACL_SOFTMAX:														 0.001983
+ACL_CONV   :								 1.238801
+ACL_RELU   :												 0.079448
+ACL_POOLING:											 0.191797
+ACL_LRN    :										 0.292830
+ACL_CONV   :								 0.572121
+ACL_RELU   :												 0.009006
+ACL_CONV   :								 1.830537
+ACL_RELU   :												 0.043470
+ACL_LRN    :										 0.647162
+ACL_POOLING:											 0.058825
+ACL_CONV   :								 0.502532
+ACL_RELU   :												 0.003906
+ACL_CONV   :								 0.531948
+ACL_RELU   :												 0.002923
+ACL_CONV   :								 1.477047
+ACL_RELU   :												 0.003922
+ACL_CONV   :								 0.555863
+ACL_RELU   :												 0.000507
+ACL_CONV   :								 0.783444
+ACL_RELU   :												 0.001950
+ACL_POOLING:											 0.166722
+ACL_CONV   :								 0.487156
+ACL_RELU   :												 0.000838
+ACL_CONV   :								 0.688863
+ACL_RELU   :												 0.003341
+ACL_CONV   :								 0.672607
+ACL_RELU   :												 0.003957
+ACL_CONV   :								 1.684071
+ACL_RELU   :												 0.011056
+ACL_CONV   :								 0.788651
+ACL_RELU   :												 0.001950
+ACL_CONV   :								 1.306150
+ACL_RELU   :												 0.007580
+ACL_POOLING:											 0.179030
+ACL_CONV   :								 0.845132
+ACL_RELU   :												 0.003340
+ACL_POOLING:											 0.068719
+ACL_CONV   :								 0.771636
+ACL_RELU   :												 0.001255
+ACL_CONV   :								 0.798660
+ACL_RELU   :												 0.000900
+ACL_CONV   :								 1.215111
+ACL_RELU   :												 0.001637
+ACL_CONV   :								 0.798182
+ACL_RELU   :												 0.000158
+ACL_CONV   :								 0.764842
+ACL_RELU   :												 0.000466
+ACL_POOLING:											 0.046982
+ACL_CONV   :								 0.015054
+ACL_RELU   :												 0.000627
+ACL_CONV   :								 0.043360
+ACL_RELU   :												 0.001330
+ACL_CONV   :								 0.038406
+ACL_RELU   :												 0.000854
+ACL_CONV   :								 0.117869
+ACL_RELU   :												 0.001640
+ACL_CONV   :								 0.013287
+ACL_RELU   :												 0.000234
+ACL_CONV   :								 0.024270
+ACL_RELU   :												 0.000838
+ACL_POOLING:											 0.058958
+ACL_CONV   :								 0.016047
+ACL_RELU   :												 0.000490
+ACL_CONV   :								 0.029886
+ACL_RELU   :												 0.001784
+ACL_CONV   :								 0.031068
+ACL_RELU   :												 0.001265
+ACL_CONV   :								 0.136910
+ACL_RELU   :												 0.001949
+ACL_CONV   :								 0.013297
+ACL_RELU   :												 0.000185
+ACL_CONV   :								 0.021914
+ACL_RELU   :												 0.000866
+ACL_POOLING:											 0.084062
+ACL_CONV   :								 0.016332
+ACL_RELU   :												 0.000420
+ACL_CONV   :								 0.038375
+ACL_RELU   :												 0.001707
+ACL_CONV   :								 0.039542
+ACL_RELU   :												 0.001097
+ACL_CONV   :								 0.187597
+ACL_RELU   :												 0.004913
+ACL_CONV   :								 0.016491
+ACL_RELU   :												 0.000271
+ACL_CONV   :								 0.028700
+ACL_RELU   :												 0.000521
+ACL_POOLING:											 0.077190
+ACL_CONV   :								 0.017112
+ACL_RELU   :												 0.000533
+ACL_CONV   :								 0.059583
+ACL_RELU   :												 0.004101
+ACL_CONV   :								 0.045374
+ACL_RELU   :												 0.001092
+ACL_CONV   :								 0.213246
+ACL_RELU   :												 0.002436
+ACL_CONV   :								 0.016031
+ACL_RELU   :												 0.000572
+ACL_CONV   :								 0.052821
+ACL_RELU   :												 0.001056
+ACL_POOLING:											 0.066665
+ACL_CONV   :								 0.031644
+ACL_RELU   :												 0.001066
+ACL_POOLING:											 0.027721
+ACL_CONV   :								 0.039177
+ACL_RELU   :												 0.000837
+ACL_CONV   :								 0.025903
+ACL_RELU   :												 0.000335
+ACL_CONV   :								 0.086530
+ACL_RELU   :												 0.001047
+ACL_CONV   :								 0.007044
+ACL_RELU   :												 0.000126
+ACL_CONV   :								 0.022406
+ACL_RELU   :												 0.000310
+ACL_POOLING:											 0.032145
+ACL_CONV   :								 0.019995
+ACL_RELU   :												 0.000211
+ACL_CONV   :								 0.058190
+ACL_RELU   :												 0.001255
+ACL_CONV   :								 0.029785
+ACL_RELU   :												 0.000401
+ACL_CONV   :								 0.125110
+ACL_RELU   :												 0.000798
+ACL_CONV   :								 0.010250
+ACL_RELU   :												 0.000147
+ACL_CONV   :								 0.030622
+ACL_RELU   :												 0.000210
+ACL_POOLING:											 0.028596
+ACL_CONV   :								 0.020343
+ACL_RELU   :												 0.000490
+ACL_POOLING:											 0.010665
+ACL_FC     :									 0.006833
+ACL_SOFTMAX:														 0.001264
+ACL_CONV   :								 1.086435
+ACL_RELU   :												 0.082441
+ACL_POOLING:											 0.199111
+ACL_LRN    :										 0.293627
+ACL_CONV   :								 0.493031
+ACL_RELU   :												 0.007942
+ACL_CONV   :								 1.611587
+ACL_RELU   :												 0.038593
+ACL_LRN    :										 0.629206
+ACL_POOLING:											 0.063417
+ACL_CONV   :								 0.472765
+ACL_RELU   :												 0.002479
+ACL_CONV   :								 0.470921
+ACL_RELU   :												 0.023219
+ACL_CONV   :								 0.271983
+ACL_RELU   :												 0.030720
+ACL_CONV   :								 0.016235
+ACL_RELU   :												 0.003943
+ACL_CONV   :								 0.091497
+ACL_RELU   :												 0.007716
+ACL_POOLING:											 0.290548
+ACL_CONV   :								 0.505802
+ACL_RELU   :												 0.000978
+ACL_CONV   :								 0.888716
+ACL_RELU   :												 0.003965
+ACL_CONV   :								 0.891975
+ACL_RELU   :												 0.003973
+ACL_CONV   :								 1.772050
+ACL_RELU   :												 0.007447
+ACL_CONV   :								 0.728231
+ACL_RELU   :												 0.001240
+ACL_CONV   :								 1.314829
+ACL_RELU   :												 0.002994
+ACL_POOLING:											 0.201379
+ACL_CONV   :								 0.759432
+ACL_RELU   :												 0.001979
+ACL_POOLING:											 0.068621
+ACL_CONV   :								 0.144268
+ACL_RELU   :												 0.001871
+ACL_CONV   :								 0.027730
+ACL_RELU   :												 0.001463
+ACL_CONV   :								 0.094017
+ACL_RELU   :												 0.001725
+ACL_CONV   :								 0.010260
+ACL_RELU   :												 0.000213
+ACL_CONV   :								 0.023563
+ACL_RELU   :												 0.000722
+ACL_POOLING:											 0.050966
+ACL_CONV   :								 0.014820
+ACL_RELU   :												 0.000621
+ACL_CONV   :								 0.044403
+ACL_RELU   :												 0.001330
+ACL_CONV   :								 0.038083
+ACL_RELU   :												 0.000853
+ACL_CONV   :								 0.118694
+ACL_RELU   :												 0.001706
+ACL_CONV   :								 0.013094
+ACL_RELU   :												 0.000425
+ACL_CONV   :								 0.025051
+ACL_RELU   :												 0.000975
+ACL_POOLING:											 0.054992
+ACL_CONV   :								 0.015864
+ACL_RELU   :												 0.000977
+ACL_CONV   :								 0.030380
+ACL_RELU   :												 0.001065
+ACL_CONV   :								 0.030302
+ACL_RELU   :												 0.001062
+ACL_CONV   :								 0.136561
+ACL_RELU   :												 0.002498
+ACL_CONV   :								 0.013003
+ACL_RELU   :												 0.000185
+ACL_CONV   :								 0.021447
+ACL_RELU   :												 0.000507
+ACL_POOLING:											 0.084072
+ACL_CONV   :								 0.015724
+ACL_RELU   :												 0.000704
+ACL_CONV   :								 0.038940
+ACL_RELU   :												 0.001089
+ACL_CONV   :								 0.039311
+ACL_RELU   :												 0.001099
+ACL_CONV   :								 0.189045
+ACL_RELU   :												 0.002894
+ACL_CONV   :								 0.015128
+ACL_RELU   :												 0.000296
+ACL_CONV   :								 0.029848
+ACL_RELU   :												 0.000945
+ACL_POOLING:											 0.076329
+ACL_CONV   :								 0.015944
+ACL_RELU   :												 0.000978
+ACL_CONV   :								 0.060595
+ACL_RELU   :												 0.002496
+ACL_CONV   :								 0.044164
+ACL_RELU   :												 0.001562
+ACL_CONV   :								 0.210889
+ACL_RELU   :												 0.003114
+ACL_CONV   :								 0.015703
+ACL_RELU   :												 0.000246
+ACL_CONV   :								 0.052615
+ACL_RELU   :												 0.002017
+ACL_POOLING:											 0.073354
+ACL_CONV   :								 0.030638
+ACL_RELU   :												 0.001240
+ACL_POOLING:											 0.044722
+ACL_CONV   :								 0.039289
+ACL_RELU   :												 0.000489
+ACL_CONV   :								 0.025544
+ACL_RELU   :												 0.000611
+ACL_CONV   :								 0.086970
+ACL_RELU   :												 0.000775
+ACL_CONV   :								 0.006637
+ACL_RELU   :												 0.000079
+ACL_CONV   :								 0.022115
+ACL_RELU   :												 0.000461
+ACL_POOLING:											 0.035382
+ACL_CONV   :								 0.019977
+ACL_RELU   :												 0.000212
+ACL_CONV   :								 0.058475
+ACL_RELU   :												 0.000932
+ACL_CONV   :								 0.029677
+ACL_RELU   :												 0.000367
+ACL_CONV   :								 0.123441
+ACL_RELU   :												 0.000733
+ACL_CONV   :								 0.010339
+ACL_RELU   :												 0.000092
+ACL_CONV   :								 0.032079
+ACL_RELU   :												 0.000490
+ACL_POOLING:											 0.036984
+ACL_CONV   :								 0.019994
+ACL_RELU   :												 0.000245
+ACL_POOLING:											 0.005994
+ACL_FC     :									 0.005085
+ACL_SOFTMAX:														 0.001247
