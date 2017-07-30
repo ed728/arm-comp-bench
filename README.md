@@ -9,6 +9,9 @@ Deep Learning benchmarking results and comparisons on ARM CPUs and GPUs.
 * Simple layer breakdown.
 * References.
 
+## v1.2
+* Updated with values per 1000 iterations.
+
 ## Instructions
 Just build with `pdflatex report.tex`.
 
