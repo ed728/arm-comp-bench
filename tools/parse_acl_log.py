@@ -19,36 +19,43 @@ def remove_empty(raw):
 def remove_white(white):
     res = []
     for w in white:
-        name = w[0][0:-1].strip()
+        name = w[0][4:-1].strip()
         val = float(w[1].strip())
         res.append((name, val))
     return res
 
 def accum(vals):
     acc = {}
+    acc["FW_PASS"] = []
+    fw = 0
     for v in vals:
         if v[0] in acc:
             acc[v[0]].append(v[1])
         else:
             acc[v[0]] = []
+        fw += v[1]
+        if v[0] == "SOFTMAX":
+            acc["FW_PASS"].append(fw)
+            fw = 0
     return acc
+
 def str_totals(vals):
     res = ""
     for k, val in vals.iteritems():
-        res += "{0}: {1}\t".format(k, sum(val)/len(val))
+        res += "{0}: {1} | ".format(k, sum(val)/len(val))
     return res
-        
+
 def process(data):
-    return accum(remove_white(remove_empty(data))) 
+    return accum(remove_white(remove_empty(data)))
+
 gpu = process(gpu_raw)
-print("GPU:")
+print("=== GPU ===")
 print(str_totals(gpu))
 
 cpu = process(cpu_raw)
-print("CPU:")
+print("=== CPU ===")
 print(str_totals(cpu))
 
 cpu_normal = process(cpu_normal_raw)
-print("CPU NORMAL:")
+print("=== CPU NORMAL ===")
 print(str_totals(cpu_normal))
-
