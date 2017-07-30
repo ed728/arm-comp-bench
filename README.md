@@ -21,5 +21,6 @@ Just build with `pdflatex report.tex`.
 ## TO-DO
 - [X] Use values per 1000 iterations.
 - [X] Use a second benchmark of googlenet.
+- [ ] Investigate why convolution is so slow on Mali GPU.
 - [ ] Add comparison to Firefly RK328.
 - [ ] Add PPA comparison with Jetson TX1.
